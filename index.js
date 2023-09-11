@@ -2,7 +2,6 @@ const petContainer = document.getElementById("pet-container");
 const petStat = document.getElementById("pet-stat");
 const petRarity = document.getElementById("pet-rarity");
 
-console.log(petData);
 let dataFilteredByStat = petData;
 let dataFilteredByRarity = petData;
 
@@ -48,6 +47,24 @@ petRarity.addEventListener("change", (e) => {
     displayPets(dataToDisplay);
   }
 });
+const initializeStatsDropdown = () => {
+  const stats = [];
+  for (const pet of petData) {
+    for (const stat in pet.stats) {
+      if (!stats.includes(stat)) {
+        stats.push(stat);
+      }
+    }
+  }
+  stats.sort();
+  for (const stat of stats) {
+    const option = document.createElement("option");
+    option.value = stat;
+    option.classList = "text-slate-950";
+    option.textContent = stat.replace(/_/g, " ").toLocaleUpperCase();
+    petStat.appendChild(option);
+  }
+};
 const displayPets = (pets) => {
   petContainer.innerHTML = "";
   for (const pet of pets) {
@@ -78,4 +95,5 @@ const displayPets = (pets) => {
   }
 };
 
+initializeStatsDropdown();
 displayPets(petData);

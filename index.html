@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>AL - Pet Finder</title>
+  </head>
+  <body>
+    <div
+      class="h-screen w-screen bg-slate-950 flex justify-center items-center flex-col py-10 px-20"
+    >
+      <h1 class="text-3xl text-amber-600 text-start w-full py-4 font-medium">
+        Arcane Legends - Pet Finder
+      </h1>
+      <div
+        class="h-full w-full bg-slate-500/5 rounded-md border border-4 border-slate-500/10 p-3 flex flex-col"
+      >
+        <div class="grid grid-cols-4 gap-3 pb-2">
+          <div>
+            <p class="text-slate-500 text-xl pb-1">Stat</p>
+            <select
+              class="bg-none outline-none px-3 py-1 bg-transparent ring-2 ring-slate-500/10 rounded-md text-slate-400 hover:cursor-pointer hover:ring-slate-500/20 w-full"
+              id="pet-stat"
+            >
+              <option value="" class="text-slate-950">All</option>
+              <option value="damage" class="text-slate-950">Damage</option>
+              <option value="gold_loot" class="text-slate-950">Gold loot</option>
+              <option value="speed" class="text-slate-950">Speed</option>
+              <option value="haste" class="text-slate-950">Haste</option>
+            </select>
+          </div>
+          <div>
+            <p class="text-slate-500 text-xl pb-1">Rarity</p>
+            <select
+              class="bg-none outline-none px-3 py-1 bg-transparent ring-2 ring-slate-500/10 rounded-md text-slate-400 hover:cursor-pointer hover:ring-slate-500/20 w-full"
+              id="pet-rarity"
+            >
+              <option value="" class="text-slate-950">All</option>
+              <option value="Common" class="text-slate-950">Common</option>
+              <option value="Rare" class="bg-green-600 text-white">Rare</option>
+              <option value="Epic" class="bg-blue-600 text-white">Epic</option>
+              <option value="Legendary" class="bg-purple-600 text-white">Legendary</option>
+              <option value="Mythic" class="bg-orange-600 text-white">Mythic</option>
+              <option value="Arcane" class="bg-red-600 text-white">Arcane</option>
+              <option value="Heroic" class="bg-cyan-600 text-white">Heroic</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex-grow h-[100px] py-4 overflow-auto ">
+          <div
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-7 gap-3 px-1"
+            id="pet-container"
+          >
+            <div class="ring-2 ring-white/50 w-full rounded-md h-[200px]">
+              <p class="text-2xl text-center py-2 text-slate-900 bg-white">
+                Pet name
+              </p>
+            </div>
+            <div class="ring-2 ring-green-600/50 w-full rounded-md h-[200px]">
+              <p class="text-2xl text-center py-2 text-slate-300 bg-green-600">
+                Pet name
+              </p>
+            </div>
+            <div class="ring-2 ring-blue-600/50 w-full rounded-md h-[200px]">
+              <p class="text-2xl text-center py-2 text-slate-300 bg-blue-600">
+                Pet name
+              </p>
+            </div>
+            <div class="ring-2 ring-purple-600/50 w-full rounded-md h-[200px]">
+              <p class="text-2xl text-center py-2 text-slate-300 bg-purple-600">
+                Pet name
+              </p>
+            </div>
+            <div class="ring-2 ring-orange-600/50 w-full rounded-md h-[200px]">
+              <p class="text-2xl text-center py-2 text-slate-300 bg-orange-600">
+                Pet name
+              </p>
+            </div>
+            <div class="ring-2 ring-red-600/50 w-full rounded-md h-[200px]">
+              <p class="text-2xl text-center py-2 text-slate-300 bg-red-600">
+                Pet name
+              </p>
+            </div>
+            <div class="ring-2 ring-cyan-600/50 w-full rounded-md h-[200px]">
+              <p class="text-2xl text-center py-2 text-slate-300 bg-cyan-600">
+                Pet name
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="petData.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
